@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
+    
+    <script src="login.js" defer></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/admission_enquiry/css/bootstrap.css"/>
+    
+
+  
+</head>
+<body>
+    
+
+<script src="adminfiles//script.js"></script>
+<script src="scriptactivenav.js"></script>
+
+<!-- Navbar -->
+<!-- Navbar -->
+<!-- <div class="container-fluid-expend m-auto "> -->
+    <nav class="navbar text-info  " style="" id="indexhomenav">
+        <a href="index.html" class="text-decoration-none">
+            <h1 class="text-info m-auto">SMS</h1>
+        </a>
+        <div class="container" id="container">
+
+            <!-- <div class="container"> -->
+            <ul>
+                <li>
+                    <a class="active" href="#">Link 1</a>
+                    <a class="" href="#link2">Link 2</a>
+                    <a class=" " href="#link3">Link 3</a>
+                    <a class=" " href="#link4">Link 4</a>
+                </li>
+            </ul>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+            <script type="text/javascript">
+                
+                    $(document).on('click','ul li a', function(){
+                        $(this).addClass('active');
+                        $(this).addClass('active').siblings().removeClass('active');
+                        
+                    })
+              
+            </script>
+
+            <div class="dropdown">
+                <?php if (isset($_SESSION['username'])) { ?>
+                    <a class="link-secondary me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-login"></i>
+                        <span class="text-info "><i class="fa fa-sign-out-alt"> My Account</i></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+
+                        <li>
+                            <a class="dropdown-item text-info" href="admin/dashboard.html">Go to Account</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" class="nav-link">Another news</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-info" href="action/login/logout.html" class="nav-link">logout</a>
+                        </li>
+                    </ul>
+                </div>
+            <?php } else { ?>
+                <div>
+                    <a href="action/login/login.html" class="nav-link">
+                        <i class="fa fa-user fa-2x mr-2  m-auto"></i> login</a>
+                <?php } ?>
+            </div>
+            </a>
+    </nav>
+<!-- </div> -->
+<!-- Navbar -->
+
+<!-- section 1 starting -->
+<div class="d-flex shadow" id="sectionfirst"
+    style="height: 405px; background: linear-gradient(-45deg, navy 52%, transparent 50%);">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="display-3  fw-bolder">School Management System</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, iusto earum labore nesciunt
+                    pariatur asperiores consequuntur magni tempora. Quaerat facere eius<br> placeat facilis quia
+                    magni
+                    repellat
+                    tempore, excepturi debitis in.</p>
+                <button type="button" class="btn btn-primary"> Call to Action</button>
+            </div>
+            <div class="col-lg-6"><br>
+                <div class="w-50 mx-auto card ">
+                    <div class="card-body ">
+                        <h3>Admission Enquiry</h3>
+
+
+                        <form action="assets/admission_enquiry/conn2.php" method="POST" class=""
+                            onsubmit="myFunction()">
+                            <div class="input w-100">
+                                <div class="form-outline">
+                                    <input type="text" id="form12" class="form-control" name="name"
+                                        required="required" />
+                                    <label class="form-label" for="name">Name</label>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="input w-100">
+                                <div class="form-outline">
+                                    <input type="email" id="Email" class="form-control" name="email"
+                                        required="required" />
+                                    <label class="form-label" for="email">Email</label>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="input w-100">
+                                <div class="form-outline">
+                                    <input type="number" id="Mobile Number" class="form-control" name="mobile"
+                                        required="required" />
+                                    <label class="form-label" for="Mobile">Mobile Number</label>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="input w-100">
+                                <div class="form-outline">
+                                    <input type="text" id="text" class="form-control" name="description" />
+                                    <label class="form-label" for="description">Description</label>
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-primary btn-block" name="submit">Submit</button>
+                        </form>
+                        <script>
+                            function myFunction() {
+                                alert("The form was submitted");
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- section1 finish -->
+
+<!-- section - our courses starting -->
+<section class="py-5" style="background-image: linear-gradient(to right, #DECBA4, #3E5151);">
+    <div class=" text-center mb-2">
+        <h3 class=" font-weight-bold "> Our Courses</h3>
+        <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas repellendus
+            adipisciperiores totam animi ullam dol</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- card one -->
+            <div class="col-lg-3">
+                <div class="card border">
+                    <div class=""><img src="./assets/images/c.png" alt="" class="img-fluid rounded-top"></div>
+                    <div class="card-body">
+                        <b>C-language Programming </b>
+                        <p class="card-text"><b>Duration </b>= 3 Months <br> <b>fee </b>- $300</p>
+                        <button class="btn btn-block btn-primary btn-sm"> Enroll now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card two -->
+            <div class="col-lg-3">
+                <div class="card border">
+                    <div class=""><img src="./assets/images/c++.png" alt="" class="img-fluid rounded-top"></div>
+                    <div class="card-body">
+                        <b>C++ language Programming </b>
+                        <p class="card-text"><b>Duration </b>= 3 Months <br> <b>fee </b>- $350</p>
+                        <button class="btn btn-block btn-primary btn-sm"> Enroll now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card three -->
+            <div class="col-lg-3">
+                <div class="card border">
+                    <div class=""><img src="./assets/images/artificial-intelligence-ai-icon-vector-23097736.jpg" alt=""
+                            class="img-fluid rounded-top"></div>
+                    <div class="card-body">
+                        <b>Artificial Intelligence </b>
+                        <p class="card-text"><b>Duration </b>= 3 Months <br> <b>fee </b>- $1000</p>
+                        <button class="btn btn-block btn-primary btn-sm"> Enroll now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card four -->
+            <div class="col-lg-3">
+                <div class="card border">
+                    <div class=""><img src="./assets/images/networking.jpg" alt="" class="img-fluid rounded-top">
+                    </div>
+                    <div class="card-body">
+                        <b>Networking </b>
+                        <p class="card-text"><b>Duration </b>= 3 Months <br> <b>fee </b>- $500</p>
+                        <button class="btn btn-block btn-primary btn-sm"> Enroll now</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- section- our courses finish -->
+
+<!-- section - our teachers -->
+<section class="py-5 shadow" id="sectionourteacher">
+    <div class=" text-center mb-2 text-white ">
+        <h3 class=" font-weight-bold "> Our Teachers</h3>
+        <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas repellendus
+            adipisciperiores totam animi ullam dol</p>
+    </div>
+    <!-- card 1 -->
+    <div class="container-fluid" id="sectionno3">
+        <div class="row">
+            <!-- teacher name -->
+
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="col-8 position-absolute" style="bottom:50px">
+                        <img src="./assets/images/teacher.jpg" alt="" class="" id="teacherphoto">
+                    </div>
+                    <div class="card-body" id="teacher">
+                        <h5 class="card-title mb-0">Teacher's Name 1</h5>
+                        <p class="card-text">
+                            <b>Courses : </b> HTML, CSS, PYTHON<br>
+                            <b>Rating </b>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="col-8 position-absolute" style="bottom:50px">
+                        <img src="./assets/images/teacher.jpg" alt="" class="" id="teacherphoto">
+                    </div>
+                    <div class="card-body" id="teacher">
+                        <h5 class="card-title mb-0">Teacher's Name 2</h5>
+                        <p class="card-text">
+                            <b>Courses : </b> HTML, CSS, PYTHON<br>
+                            <b>Rating </b>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="col-8 position-absolute" style="bottom:50px">
+                        <img src="./assets/images/teacher.jpg" alt="" class="" id="teacherphoto">
+                    </div>
+                    <div class="card-body" id="teacher">
+                        <h5 class="card-title mb-0">Teacher's Name 3</h5>
+                        <p class="card-text">
+                            <b>Courses : </b> HTML, CSS, PYTHON<br>
+                            <b>Rating </b>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="col-8 position-absolute" style="bottom:50px">
+                        <img src="./assets/images/teacher.jpg" alt="" class="" id="teacherphoto">
+                    </div>
+                    <div class="card-body" id="teacher">
+                        <h5 class="card-title mb-0">Teacher's Name 4</h5>
+                        <p class="card-text">
+                            <b>Courses : </b> HTML, CSS, PYTHON<br>
+                            <b>Rating </b>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                            <i class="fa fa-star teaxt-warning" id="star"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section - our teachers finish -->
+<!-- section- about us starting -->
+<section class="py-5 shadow " id="sectionaboutus">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 py-5 text-white">
+                <h3>About - <br>School Management System</h3>
+                <div class="pr-5 py-2">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam,
+                        numquam! Tempora vero ex cumque quod deleniti dolor eos quisquam
+                        facilis. Ad totam accusamus magnam ab eveniet quibusdam fuga! Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Illum eum, enim soluta aspernatur tempora eveniet
+                        reiciendis consequuntur at? Saepe mollitia amet alias unde eum voluptate libero voluptas
+                        totam voluptatem deserunt!
+                    </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolore
+                        dicta quis modi unde quo deserunt enim, velit doloremque,
+                        inventore, corrupti dolorum! Unde voluptates illum repudiandae, optio
+                        officia enim dignissimos?</p>
+                </div>
+                <a href="about-us.html" class="btn btn-secondary" id="btn1">Know More</a>
+
+            </div>
+            <div class="col-lg-6">
+                <img src="./assets/images/school.jpg" alt="" class="img-fluid" id="imgaboutus">
+
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- section- about us finish -->
+<!-- sectyion- our achievements starting -->
+<section class="py-5 border shadow" id="sectionachievement">
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Achievements</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quas perferendis
+                        architecto quis fugit
+                        tenetur aspernatur.</p>
+                    <img src="./assets/images/achievement.jpg" alt="">
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="border rounded ">
+                                <div class="card-body text-center">
+                                    <span><i class=" text-warning fa-solid fa-graduation-cap fa-2x"></i></span>
+                                    <h4 class="my-3 h1">5430</h4>
+                                    <hr class="border warning">
+                                    <h5>Graduates</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="border rounded ">
+                                <div class="card-body text-center">
+                                    <span><i class=" text-warning fa-solid fa-graduation-cap fa-2x"></i></span>
+                                    <h4 class="my-3 h1">5430</h4>
+                                    <hr class="border warning">
+                                    <h5>Graduates</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="border rounded ">
+                                <div class="card-body text-center">
+                                    <span><i class=" text-warning fa-solid fa-graduation-cap fa-2x"></i></span>
+                                    <h4 class="my-3 h1">5430</h4>
+                                    <hr class="border warning">
+                                    <h5>Graduates</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="border rounded ">
+                                <div class="card-body text-center">
+                                    <span><i class=" text-warning fa-solid fa-graduation-cap fa-2x"></i></span>
+                                    <h4 class="my-3 h1">5430</h4>
+                                    <hr class="border warning">
+                                    <h5>Graduates</h5>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- sectyion- our achievements finish -->
+<!-- section - whatpeoplesays starting -->
+<section class="py-5">
+    <div class=" text-center mb-2 ">
+        <h3 class=" font-weight-bold "> What People Say's</h3>
+        <p class="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas repellendus
+            adipisciperiores totam animi ullam dol</p>
+    </div>
+    <!-- card 1 -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- teacher name -->
+            <div class="col-lg-3 text-center m-auto">
+                <div class="card">
+                    <div class="card-body border " id="quotes"><i
+                            class=" text-warning fa-solid fa-quote-left fa-2x"></i>
+                        <p class="text-black">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio,
+                            architecto ex quae, beatae
+                            deleniti similique totam,
+                            sapiente voluptatibus nihil illo labore reiciendis. Provident omnis voluptatibus
+                            facilis?
+                            Illum non qui dolore?</p>
+                    </div>
+                </div>
+                <div class="text-center "> <img src="./assets/images/teacher.jpg" alt="" class="" id="teacherphotowhat">
+                    <h5 class="text-center text-warning my-10">Name of Candidate</h5>
+                    <i>Designation</i>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center m-auto">
+                <div class="card">
+                    <div class="card-body border" id="quotes"><i class=" text-warning fa-solid fa-quote-left fa-2x"></i>
+                        <p class="text-black"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio,
+                            architecto ex quae, beatae
+                            deleniti similique totam,
+                            sapiente voluptatibus nihil illo labore reiciendis. Provident omnis voluptatibus
+                            facilis?
+                            Illum non qui dolore?</p>
+                    </div>
+                </div>
+                <div class="text-center"> <img src="./assets/images/teacher.jpg" alt="" class="" id="teacherphotowhat">
+                    <h5 class="text-center text-warning my-10">Name of Candidate</h5>
+                    <i>Designation</i>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="col-lg-3 text-center m-auto">
+                <div class="card">
+                    <div class="card-body border" id="quotes"><i class=" text-warning fa-solid fa-quote-left fa-2x"></i>
+                        <p class="text-black">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio,
+                            architecto ex quae, beatae
+                            deleniti similique totam,
+                            sapiente voluptatibus nihil illo labore reiciendis. Provident omnis voluptatibus
+                            facilis?
+                            Illum non qui dolore?</p>
+                    </div>
+                </div>
+                <div class="text-center"> <img src="./assets/images/teacher.jpg" alt="" class="" id="teacherphotowhat">
+                    <h5 class="text-center text-warning my-10">Name of Candidate</h5>
+                    <i>Designation</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section - whatpeoplesays finish -->
+<!-- footer start -->
+<footer class="py-5 " style="background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(82, 41, 1, 0.8), rgba(0,255,0,0) 50%),
+            linear-gradient(336deg, rgba(0,0,255,.8), rgba(5, 5, 238, 0) 90%);">
+    <div class="text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- 1 footer icons-->
+                <div class="col-lg-4">
+                    <h5>Useful Links</h5>
+                    <ul class="fa-ul">
+                        <li><a href="" class="text-light"><i class="fa-li fa fa-angle-right"></i>News</a></li>
+                        <li><a href="" class="text-light"><i class="fa-li fa fa-angle-right"></i>Enrollment</a></li>
+                        <li><a href="" class="text-light"><i class="fa-li fa fa-angle-right"></i>Result</a></li>
+                        <li><a href="" class="text-light"><i class="fa-li fa fa-angle-right"></i>CBSE</a></li>
+                        <li><a href="" class="text-light"><i class="fa-li fa fa-angle-right"></i>Digital Campus</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 2 footer icons-->
+                <div class="col-lg-4">
+                    <h5>Social Media</h5>
+                    <div>
+                        <span class="fa-stack fa-lg"><a href="https://www.facebook.com/" class="text-light">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse text-dark"></i> </a>
+                        </span>
+                        <span class="fa-stack fa-lg"><a href="https://www.instagram.com/" class="text-light">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x fa-inverse text-dark"></i></a>
+                        </span>
+                        <span class="fa-stack fa-lg"><a href="https://twitter.com/" class="text-light">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse text-dark"></i> </a>
+                        </span>
+                        <span class="fa-stack fa-lg"><a href="https://www.linkedin.com" class="text-light">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse text-dark"></i> </a>
+                        </span>
+                        <span class="fa-stack fa-lg"><a href="https://www.youtube.com/" class="text-light">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-youtube fa-stack-1x fa-inverse text-dark"></i> </a>
+                        </span>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="col-lg-4">
+                    <h5>Subscibe Us</h5>
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Your Email" id="Subscibeform">
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block mt-2">Submit </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>Copyright &#169; and Registered &#174; by School Management
+    </div>
+</footer>
+<!-- footer finish -->
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+<!-- jQuery -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!-- Bootstrap JS -->
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+
+<!-- <script>
+(function(){
+  var path = window.location.href;
+  // console.log(path);
+  $(".nav-link").each(function(){
+
+    var href = $(this).attr('href');
+    // console.log(href);
+    if (path === decodeURIComponent(href))
+    {
+      $(this).addClass('active');
+      var parent = $(this).closest('.has-treeview');
+      parent.addClass('menu-open');
+      $(parent).find(.nav-link).first().addClass('active');
+
+    };
+  });
+}());
+</script> -->
+</body>
+
+</html>
